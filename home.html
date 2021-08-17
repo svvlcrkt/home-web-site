@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to make a website</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            font-family: sans-serif;
+        }
+        .c1{
+            width:100%;
+            height: 100vh;
+            background-image:url(home.jpg);
+            background-size: cover;  /* background-size: cover ile görselin tüm ekranı kaplaması sağlanır. */
+            background-position: center; /* görsel ortalanmış olur. */
+        }
+        .c2{
+            width:85½;
+            margin:auto;
+            padding: 35px;
+            display: flex; /*öğelerin esnek olmasını sağlar*/
+            align-items: center; /*öğeleri dikey eksende ortalar*/
+            justify-content: space-between; /**/
+        }
+        .c2 ul li{
+            list-style: none; /*bu özellik sayesinde ul etiketi ile oluşan yandaki simgeler giderilir.*/
+            display: inline-block;
+            margin: 0 20px;
+            position:relative;  /*relative ile kutu oluşturulur*/
+
+        }
+        .c2 ul li a{
+            text-decoration: none; /* none olarak ayarlamazsak otomatikmen altı çizili şekilde oluşur. */
+            color:#5A5349;
+            text-transform: uppercase; /* harfleri büyütür. */
+        }
+        .c2 ul li::after{
+            content: '';
+            height: 3px;
+            width: 0;
+            background: #F8B063;
+            position:absolute; /*absolute ile de relative ile oluşturulan bu kutu istenilen yere taşınır.*/
+            left: 0;
+            bottom: -10px;
+            transition: 0.5s;
+            
+        }
+        .c2 ul li:hover::after{
+            width:100%;
+            
+          
+        }
+        .logo{
+            width:50px;
+            height:50px;
+            cursor:pointer; /* logo üzerine gelince el simgesinin çıkmasını sağlar.  */
+
+        }
+        .c3{
+            width:100%;
+            position:absolute;
+            transform:translateY(-50%);
+            top:50%;
+            text-align: center;
+            color:#2D2925;
+        }
+        .c3 h1{
+            font-size: 70px;
+            margin-top: 80px;
+        }
+        .c3 p{
+            margin: 20px auto;
+            font-weight: 100;
+            line-height: 25px;
+        }
+        button{
+            width:200px;
+            padding:15px;
+            text-align: center;
+            margin: 20px 10px;
+            border-radius: 25px;
+            font-weight: bold;
+            border: 2px solid #F8B063;
+            background: transparent;
+            color:#fff;
+            cursor: pointer;
+            position:relative; /*çerçeveyi oluşturur*/
+            overflow:hidden;
+
+        }
+        span{
+            background: #F8B063;
+            width: 0;
+            height: 100%;
+            border-radius: 25px;
+            position:absolute;  /*çerçeveyi yapıştırır*/
+            left:0;
+            bottom:0;
+            z-index: -1;
+            transition: 0.5s;
+            
+        }
+        button:hover span{
+            width:100%;
+
+        }
+        button:hover{
+            border:none;
+        }
+
+        
+    </style>
+</head>
+<body>
+
+    <div class="c1">
+        <div class="c2">
+            <img src="ev-logo.png" alt="Logo Görseli" class="logo">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Bedroom</a></li>
+                <li><a href="#">Dining</a></li>
+                <li><a href="#">Kitchen</a></li>
+                <li><a href="#">Backyard</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="c3">
+        <h1>DESIGN YOUR HOUSE</h1>
+        <p>Subscribe Easy Tutorials,...</p>
+        <div>
+            <button type="button"><span></span>WATCH MORE</button>
+            <button type="button"><span></span>SUBSCRIBE</button>
+        </div>
+    </div>
+    
+</body>
+</html>
